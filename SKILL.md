@@ -16,6 +16,10 @@ Automate native macOS dialogs (save, open, alert, print) and browser-triggered U
 via AppleScript System Events. Covers dialog detection, element interaction,
 UI exploration for unknown dialogs, and Chrome JavaScript integration.
 
+## Agent Delegation
+
+Delegate AppleScript automation to `worker` agent.
+
 ## Config
 
 | Parameter | Value |
