@@ -71,7 +71,7 @@ Use Cmd+Shift+G to open "Go to Folder" when the path isn't in the popup:
 tell splitter group 1 of sheet 1 of window 1
   keystroke "g" using {command down, shift down}
   delay 0.5
-  keystroke "/Users/joneshong/custom/path/"
+  keystroke "~/custom/path/"
   keystroke return
   delay 0.5
 end tell

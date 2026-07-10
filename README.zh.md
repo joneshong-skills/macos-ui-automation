@@ -34,7 +34,7 @@ tell application "System Events"
       set value of text field "儲存為：" to "output.jpg"
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "/Users/joneshong/Downloads/claude_code_skill/"
+      keystroke "~/Downloads/claude_code_skill/"
       keystroke return
       delay 0.5
       click button "儲存"

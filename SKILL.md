@@ -119,7 +119,7 @@ tell application "System Events"
       -- Navigate to default save path via Go to Folder
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "/Users/joneshong/Downloads/claude_code_skill/"
+      keystroke "~/Downloads/claude_code_skill/"
       keystroke return
       delay 0.5
 
@@ -213,7 +213,7 @@ tell application "System Events"
       set value of text field "儲存為：" to "downloaded-file.jpg"
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "/Users/joneshong/Downloads/claude_code_skill/"
+      keystroke "~/Downloads/claude_code_skill/"
       keystroke return
       delay 0.5
       click button "儲存"
