@@ -1,13 +1,9 @@
 ---
 name: macos-ui-automation
-description: >-
-  This skill should be used when the user asks to "control a macOS dialog",
-  "handle a save dialog", "automate macOS UI", "AppleScript 控制視窗",
-  "處理儲存對話框", "下載檔案到指定位置", mentions native macOS dialog automation,
-  or discusses controlling save/open/alert dialogs, file pickers, or other
-  native macOS UI elements via AppleScript and System Events.
+description: "macos, ui, automation, dialog, control, handle, save, AppleScript 控制視窗, 處理儲存對話框, 下載檔案到指定位置"
 version: 0.1.1
 tools: Bash
+disable-model-invocation: true
 ---
 
 # macOS UI Automation
