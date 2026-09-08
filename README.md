@@ -6,7 +6,7 @@ Automate native macOS dialogs (save, open, alert, print) and browser-triggered U
 
 **Prerequisites:**
 - Accessibility permission: Grant Terminal/app access in System Settings > Privacy & Security > Accessibility
-- Default save directory: `mkdir -p ~/Downloads/claude_code_skill/`
+- Default save directory: `mkdir -p ~/workshop/outputs/macos-ui-automation/`
 
 ## Core Pattern
 
@@ -32,7 +32,7 @@ tell application "System Events"
       set value of text field "儲存為：" to "output.jpg"
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "~/Downloads/claude_code_skill/"
+      keystroke "~/workshop/outputs/macos-ui-automation/"
       keystroke return
       delay 0.5
       click button "儲存"

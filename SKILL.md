@@ -20,15 +20,15 @@ Delegate AppleScript automation to `worker` agent.
 
 | Parameter | Value |
 |-----------|-------|
-| Default save path | `~/Downloads/claude_code_skill/` |
+| Default save path | `~/workshop/outputs/macos-ui-automation/` |
 
 ## Prerequisites
 
 - **Accessibility permission**: The app running AppleScript (Terminal, iTerm, VS Code, etc.)
   must be granted access in **System Settings → Privacy & Security → Accessibility**.
   Without this, System Events commands will fail silently or error.
-- **Default save directory**: Ensure `~/Downloads/claude_code_skill/` exists before saving.
-  Create it if needed: `mkdir -p ~/Downloads/claude_code_skill/`
+- **Default save directory**: Ensure `~/workshop/outputs/macos-ui-automation/` exists before saving.
+  Create it if needed: `mkdir -p ~/workshop/outputs/macos-ui-automation/`
 
 ## Core Pattern
 
@@ -100,8 +100,8 @@ end repeat
 
 Element path: `splitter group 1 of sheet 1 of window 1`
 
-Default save location is `~/Downloads/claude_code_skill/`. Before saving, ensure the
-directory exists (`mkdir -p ~/Downloads/claude_code_skill/`). Since this is a custom path,
+Default save location is `~/workshop/outputs/macos-ui-automation/`. Before saving, ensure the
+directory exists (`mkdir -p ~/workshop/outputs/macos-ui-automation/`). Since this is a custom path,
 use Cmd+Shift+G to navigate instead of the location popup:
 
 ```bash
@@ -115,7 +115,7 @@ tell application "System Events"
       -- Navigate to default save path via Go to Folder
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "~/Downloads/claude_code_skill/"
+      keystroke "~/workshop/outputs/macos-ui-automation/"
       keystroke return
       delay 0.5
 
@@ -165,7 +165,7 @@ Narrow scope if output is too large: `entire contents of splitter group 1 of she
 
 After dialog interaction, verify the expected outcome:
 ```bash
-ls -lh ~/Downloads/claude_code_skill/output.jpg
+ls -lh ~/workshop/outputs/macos-ui-automation/output.jpg
 ```
 
 ## Browser Integration: Chrome AppleScript
@@ -195,7 +195,7 @@ end tell'
 
 **Step B** — Handle the save dialog (separate `osascript` call):
 ```bash
-mkdir -p ~/Downloads/claude_code_skill/
+mkdir -p ~/workshop/outputs/macos-ui-automation/
 osascript -e '
 tell application "System Events"
   tell process "Google Chrome"
@@ -209,7 +209,7 @@ tell application "System Events"
       set value of text field "儲存為：" to "downloaded-file.jpg"
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "~/Downloads/claude_code_skill/"
+      keystroke "~/workshop/outputs/macos-ui-automation/"
       keystroke return
       delay 0.5
       click button "儲存"
@@ -252,25 +252,6 @@ The `mouseenter` dispatch ensures hover-reveal buttons become visible before cli
 | Element label mismatch | Different macOS locale | Use `entire contents` to discover actual labels |
 | Chrome JS returns error | Tab navigated away | Re-check active tab matches expected page |
 | `set value` doesn't work | Field is read-only or custom | Try `keystroke` instead of `set value` |
-
-## Continuous Improvement
-
-This skill evolves with each use. After every invocation:
-
-1. **Reflect** — Identify what worked, what caused friction, and any unexpected issues
-2. **Record** — Append a concise lesson to `lessons.md` in this skill's directory
-3. **Refine** — When a pattern recurs (2+ times), update SKILL.md directly
-
-### lessons.md Entry Format
-
-```
-### YYYY-MM-DD — Brief title
-- **Friction**: What went wrong or was suboptimal
-- **Fix**: How it was resolved
-- **Rule**: Generalizable takeaway for future invocations
-```
-
-Accumulated lessons signal when to run `/skill-optimizer` for a deeper structural review.
 
 ## Additional Resources
 

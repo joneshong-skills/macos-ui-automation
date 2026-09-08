@@ -8,7 +8,7 @@
 
 **前置需求：**
 - 無障礙權限：在「系統設定 > 隱私權與安全性 > 無障礙功能」中授予終端機/應用程式存取權
-- 預設儲存目錄：`mkdir -p ~/Downloads/claude_code_skill/`
+- 預設儲存目錄：`mkdir -p ~/workshop/outputs/macos-ui-automation/`
 
 ## 核心模式
 
@@ -34,7 +34,7 @@ tell application "System Events"
       set value of text field "儲存為：" to "output.jpg"
       keystroke "g" using {command down, shift down}
       delay 0.5
-      keystroke "~/Downloads/claude_code_skill/"
+      keystroke "~/workshop/outputs/macos-ui-automation/"
       keystroke return
       delay 0.5
       click button "儲存"
