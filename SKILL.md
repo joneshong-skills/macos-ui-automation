@@ -14,7 +14,7 @@ UI exploration for unknown dialogs, and Chrome JavaScript integration.
 
 ## Agent Delegation
 
-Delegate AppleScript automation to `worker` agent.
+Runs in main context — a dialog takes a few `osascript` calls. Hand off to `worker` only when dialog handling is one step inside a larger batch job.
 
 ## Config
 
